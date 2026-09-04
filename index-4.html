@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#ff9dcc">
+<title>Maafin Aku Ya 💗</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&family=Fredoka:wght@500;600;700&family=Pacifico&display=swap');
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{font-family:"DM Sans",sans-serif;background:#21091c;color:#fff;touch-action:manipulation}
+#app{height:100dvh;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 20%,#ffb8dc 0,#8d3b73 34%,#21091c 78%)}
+.scene{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:28px 18px 55px;opacity:0;visibility:hidden;transform:scale(1.05);transition:opacity .7s,transform .8s}
+.scene.on{opacity:1;visibility:visible;transform:scale(1)}
+.card{width:min(100%,420px);max-height:88dvh;overflow:auto;padding:28px 20px;border:2px solid rgba(255,255,255,.3);border-radius:34px;text-align:center;background:rgba(255,255,255,.12);backdrop-filter:blur(17px);box-shadow:0 25px 70px rgba(0,0,0,.28),inset 0 1px rgba(255,255,255,.35)}
+.card::-webkit-scrollbar{display:none}
+h1,h2{font-family:Fredoka,sans-serif;margin:8px 0 15px}h1{font-size:43px;line-height:1.05}h2{font-size:31px}
+p{line-height:1.65;color:#fff5fb}.small{font-size:12px;opacity:.75;letter-spacing:.08em;text-transform:uppercase}
+.script{font-family:Pacifico,cursive;color:#ffe0f0}
+button{font:700 15px "DM Sans";border:0;color:#fff;border-radius:999px;padding:14px 20px;margin:8px 4px;background:linear-gradient(135deg,#ffb4da,#ff5ca9);box-shadow:0 9px 25px rgba(255,82,168,.3);cursor:pointer}
+button:active{transform:scale(.94)}button.secondary{background:rgba(255,255,255,.13);box-shadow:none;border:1px solid rgba(255,255,255,.25)}
+.teddy{font-size:100px;display:inline-block;filter:drop-shadow(0 12px 18px rgba(0,0,0,.25));animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-12px) rotate(2deg)}}
+.wave{animation:wave 1s 4}.sad{animation:sad 2s infinite}@keyframes wave{0%,100%{transform:rotate(0)}35%{transform:rotate(12deg)}70%{transform:rotate(-10deg)}}@keyframes sad{50%{transform:translateY(6px) rotate(-3deg)}}
+.cloud{position:absolute;font-size:55px;opacity:.35;animation:cloud 18s linear infinite;pointer-events:none}.c1{top:10%;left:-80px}.c2{top:25%;right:-90px;animation-duration:24s;animation-direction:reverse}@keyframes cloud{to{transform:translateX(115vw)}}
+.spark{position:absolute;pointer-events:none;animation:float 5s linear infinite}.spark:nth-child(1){left:8%;top:22%}.spark:nth-child(2){right:10%;top:35%;animation-delay:1s}.spark:nth-child(3){left:18%;bottom:18%;animation-delay:2s}@keyframes float{50%{transform:translateY(-22px) rotate(20deg);opacity:.6}}
+.ribbon{position:absolute;width:150%;height:68px;left:-25%;top:45%;background:linear-gradient(90deg,transparent,#ff72b8,#ffe1ef,#ff72b8,transparent);transform:rotate(-7deg);animation:ribbon 1.3s both;opacity:.8}@keyframes ribbon{from{transform:translateX(-80%) rotate(-7deg)}to{transform:translateX(0) rotate(-7deg)}}
+.roblox{height:260px;position:relative;border-radius:28px;overflow:hidden;background:linear-gradient(#a8dcff 0 48%,#7cc37b 49% 67%,#5b994e 68%);margin:15px 0;border:2px solid rgba(255,255,255,.25)}
+.mountain{position:absolute;bottom:0;width:0;height:0;border-left:145px solid transparent;border-right:145px solid transparent;border-bottom:220px solid #5f777d;left:8%}.mountain:after{content:"";position:absolute;left:-55px;top:5px;border-left:55px solid transparent;border-right:55px solid transparent;border-bottom:82px solid #f4ddea}
+.mountain.m2{transform:scale(.75);left:52%;bottom:-5px;opacity:.8}.path{position:absolute;bottom:0;left:45%;width:42px;height:180px;background:#b88769;transform:skewX(-13deg)}
+.char{position:absolute;font-size:42px;bottom:28px;transition:1.4s}.me{left:35%}.her{left:18%}.run .me{left:76%}.run .her{left:18%}
+.chatbubble{background:white;color:#8d3b73;padding:10px 14px;border-radius:18px;font-weight:700;position:absolute;top:20px;left:9%;animation:pop .5s both}.chatbubble:after{content:"";position:absolute;bottom:-8px;left:24px;border:8px solid transparent;border-top-color:white;border-bottom:0}@keyframes pop{from{transform:scale(.3);opacity:0}to{transform:scale(1);opacity:1}}
+.envwrap{height:240px;perspective:900px;position:relative;margin:5px auto}.env{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:270px;height:175px;background:#ffd2e6;border-radius:14px;box-shadow:0 22px 45px #13040e88}.env:before{content:"";position:absolute;inset:0;background:#f6a8c8;clip-path:polygon(0 0,50% 62%,100% 0);transform-origin:top;transition:1s;z-index:3}.env.open:before{transform:rotateX(180deg)}.seal{position:absolute;z-index:5;left:50%;top:55%;transform:translate(-50%,-50%);font-size:50px;transition:.5s}.env.open .seal{opacity:0;transform:translate(-50%,-50%) scale(0)}
+.letter{position:absolute;z-index:2;left:20px;right:20px;top:18px;height:150px;background:#fffafc;color:#713250;border-radius:9px;padding:15px;text-align:left;font-family:Georgia,serif;overflow:hidden;transform:translateY(15px);transition:1s}.env.open .letter{transform:translateY(-90px)}
+.heart{font-size:105px;display:inline-block;cursor:pointer;filter:drop-shadow(0 0 20px #ff65af);animation:heart 1.5s infinite}@keyframes heart{50%{transform:scale(1.08)}}
+.burst{animation:burst .65s!important}@keyframes burst{50%{transform:scale(1.45)}100%{transform:scale(1)}}
+.particle{position:absolute;font-size:22px;pointer-events:none;animation:explode .9s forwards}@keyframes explode{to{transform:translate(var(--x),var(--y)) scale(.2) rotate(360deg);opacity:0}}
+.paper{background:#fffafc;color:#69324d;border-radius:24px;padding:20px;text-align:left;max-height:48dvh;overflow:auto;font-family:Georgia,serif;font-size:18px;line-height:1.65;box-shadow:0 15px 40px #12030d55}.paper::-webkit-scrollbar{display:none}
+.night{background:radial-gradient(circle at 50% 18%,#ffb7dd 0,#5c2857 31%,#100714 78%)}.moon{position:absolute;top:10%;right:12%;width:72px;height:72px;border-radius:50%;background:#fff3fb;box-shadow:0 0 55px #ffd1ed}.garden{position:absolute;bottom:-10%;width:150%;height:40%;background:radial-gradient(ellipse,#542448,transparent 68%)}.firework{position:absolute;font-size:25px;animation:fw 2.4s ease-out infinite}.f1{left:50%;top:37%}.f2{left:25%;top:28%;animation-delay:1s}@keyframes fw{0%{opacity:0;transform:scale(.1)}15%{opacity:1}70%{opacity:.8;transform:scale(4)}100%{opacity:0;transform:scale(6)}}
+.progress{position:fixed;z-index:20;left:0;top:0;height:4px;width:0;background:#fff;transition:.5s}.controls{position:fixed;z-index:30;right:12px;top:12px}.controls button{width:42px;height:42px;padding:0;margin:0;background:rgba(0,0,0,.2);border:1px solid #ffffff55;box-shadow:none}
+.dots{position:fixed;z-index:20;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:5px}.dot{width:6px;height:6px;border-radius:10px;background:#ffffff55}.dot.on{width:19px;background:white}
+</style>
+</head>
+<body>
+<div id="app">
+<div class="progress" id="progress"></div>
+<div class="controls"><button id="musicBtn">♫</button></div>
+<div class="cloud c1">☁️</div><div class="cloud c2">☁️</div>
+<div class="spark">✨</div><div class="spark">🌸</div><div class="spark">💗</div>
+<audio id="music" loop></audio>
+
+<section class="scene on" id="s0"><div class="ribbon"></div><div class="card">
+<div class="small">sebuah pesan kecil buat kamu</div><div class="teddy wave">🧸</div>
+<h1>Heii kamu… 🥺</h1><p>Aku bikin sesuatu. Bukan karena mau lebay, tapi karena ada satu hal yang pengen banget aku sampaikan.</p>
+<button onclick="go(1)">Buka ceritanya 💗</button></div></section>
+
+<section class="scene" id="s1"><div class="card"><div class="small">chapter 01</div><div class="teddy">🧸</div>
+<h2>Mulai dari kejadian tadi…</h2><p>Kita kan tadi lagi main <b>Roblox</b> + call di map gunung.</p>
+<p>Terus sebenarnya kamu ngajak aku <b>bareng</b>…</p><button onclick="go(2)">Terus gimana? 👀</button></div></section>
+
+<section class="scene" id="s2"><div class="card"><div class="small">chapter 02 · mountain map</div>
+<div class="roblox" id="roblox"><div class="mountain"></div><div class="mountain m2"></div><div class="path"></div>
+<div class="chatbubble">“Ayo bareng…” 🥺</div><div class="char her">👧🏻</div><div class="char me">🧑🏻</div></div>
+<p id="runText">Kamu udah ngajak aku bareng… tapi aku <b>nggak denger.</b> 😭</p>
+<button onclick="runScene()">Lihat yang terjadi…</button><button class="secondary" onclick="go(3)">Lanjut 💗</button></div></section>
+
+<section class="scene" id="s3"><div class="card"><div class="small">chapter 03</div><div class="teddy sad">🧸</div>
+<h2>Dan aku malah lanjut…</h2><p>Aku terus jalan karena nggak sadar kamu tadi ngajak bareng.</p>
+<p>Sampai akhirnya aku malah <b>ninggalin kamu 1 CP</b>. 😭</p>
+<p>Kalau aku tahu kamu ngajak bareng, pasti aku tungguin.</p><button onclick="go(4)">Aku baru sadar… 🥲</button></div></section>
+
+<section class="scene" id="s4"><div class="card"><div class="small">chapter 04 · realization</div>
+<div class="heart" id="heart">💗</div><h2>Oalah… ternyata kamu ngajak aku.</h2>
+<p id="heartText">Tekan hatinya… aku mau ngumpulin semua “maaf” yang tadi belum sempat aku bilang.</p>
+<button class="secondary" onclick="go(5)">Buka suratnya 💌</button></div></section>
+
+<section class="scene" id="s5"><div class="card"><div class="small">chapter 05</div><h2 class="script">Untuk kamu…</h2>
+<div class="envwrap"><div class="env" id="env"><div class="letter">Surat rahasia buat kamu 💗</div><div class="seal">💌</div></div></div>
+<p>Tekan amplopnya. Pelan-pelan ya…</p><button onclick="openEnv()">Buka surat 💌</button></div></section>
+
+<section class="scene" id="s6"><div class="card"><div class="small">the actual apology</div>
+<h2 class="script">Maafin aku ya…</h2>
+<div class="paper"><div id="typed"></div></div>
+<button onclick="go(7)">Aku janji lebih dengerin 🥺</button></div></section>
+
+<section class="scene" id="s7"><div class="card"><div class="small">chapter 07</div><div class="teddy wave">🧸</div>
+<h2>Mulai sekarang…</h2><p>Kalau kamu ngajak aku bareng, aku bakal lebih merhatiin.</p>
+<p>Kalau kamu bilang tungguin, aku bakal berhenti dan nungguin kamu.</p>
+<p>Karena main bareng itu bukan soal siapa yang sampai duluan. 😭💗</p>
+<button onclick="go(8)">Satu hal terakhir… 🌷</button></div></section>
+
+<section class="scene night" id="s8"><div class="moon"></div><div class="garden"></div><div class="firework f1">💗</div><div class="firework f2">✨</div>
+<div class="card"><div class="small">last chapter</div><div class="teddy">🧸</div><h1>Maafin aku ya :(</h1>
+<p>Aku nggak bermaksud ninggalin kamu. Aku cuma nggak kedengeran waktu kamu ngajak aku bareng.</p>
+<p>Terima kasih udah baca sampai akhir. 🥺</p><div class="script">jangan ngambek lagi yaaa 💗</div>
+<button onclick="finale()">Klik kalau udah agak baikan 🥺👉👈</button></div></section>
+
+<div class="dots" id="dots"></div>
+<input type="file" id="audioFile" accept="audio/*" hidden>
+</div>
+<script>
+const scenes=[...document.querySelectorAll('.scene')],dots=document.getElementById('dots'),progress=document.getElementById('progress');
+let cur=0,typed=false;
+scenes.forEach((s,i)=>{let d=document.createElement('i');d.className='dot';d.onclick=()=>go(i);dots.appendChild(d)});
+function go(n){cur=Math.max(0,Math.min(scenes.length-1,n));scenes.forEach((s,i)=>s.classList.toggle('on',i===cur));[...dots.children].forEach((d,i)=>d.classList.toggle('on',i===cur));progress.style.width=(cur/(scenes.length-1)*100)+'%';if(cur===6)typeLetter();play()}
+function play(){let m=document.getElementById('music');if(m.src)m.play().catch(()=>{})}
+function runScene(){document.getElementById('roblox').classList.add('run');document.querySelector('.me').style.left='76%';document.getElementById('runText').innerHTML='Aku malah terus jalan… sampai akhirnya <b>ninggalin kamu 1 CP</b> 😭';}
+function openEnv(){document.getElementById('env').classList.add('open');setTimeout(()=>go(6),1250)}
+const text=`Aku mau minta maaf buat kejadian tadi.
+
+Tadi kita lagi main Roblox sambil call di map gunung. Kamu sebenarnya ngajak aku bareng, tapi aku nggak denger. Aku malah lanjut jalan sendiri sampai akhirnya ninggalin kamu 1 CP.
+
+Aku tahu mungkin kelihatannya cuma kejadian kecil di game, tapi aku tetap nggak enak karena kamu ngajak aku bareng dan aku malah nggak sadar.
+
+Aku nggak bermaksud ninggalin kamu. Kalau aku dengar dari awal, aku pasti tungguin dan jalan bareng kamu.
+
+Maaf ya kalau akhirnya kamu jadi kesel, kecewa, atau ngerasa aku nggak peduli. Bukan begitu maksudku.
+
+Aku bakal lebih merhatiin kalau kamu ngomong, apalagi kalau lagi call. Aku nggak mau gara-gara hal kecil kayak gini kamu jadi ngerasa sendirian padahal kita lagi main bareng.
+
+Jadi… maafin aku ya 🥺💗
+
+Aku nggak janji bakal selalu sempurna, tapi aku bakal berusaha lebih peka dan lebih dengerin kamu.
+
+Dan kalau nanti kita main lagi…
+
+kali ini aku yang tungguin kamu. 🧸💗`;
+function typeLetter(){if(typed)return;typed=true;let el=document.getElementById('typed'),i=0;let t=setInterval(()=>{el.textContent=text.slice(0,i++);if(i>text.length)clearInterval(t)},15)}
+document.getElementById('heart').onclick=()=>{let h=document.getElementById('heart');h.classList.add('burst');for(let i=0;i<22;i++){let p=document.createElement('span');p.className='particle';p.textContent=['💗','💕','✨','🌸'][i%4];p.style.left='50%';p.style.top='38%';p.style.setProperty('--x',(Math.random()*260-130)+'px');p.style.setProperty('--y',(Math.random()*280-140)+'px');document.getElementById('s4').appendChild(p);setTimeout(()=>p.remove(),1000)}document.getElementById('heartText').textContent='Maafnya udah kekumpul banyak banget… 🥺💗'}
+function finale(){for(let i=0;i<45;i++){let p=document.createElement('span');p.className='particle';p.textContent=['💗','🌸','🦋','✨','🌷'][i%5];p.style.left='50%';p.style.top='45%';p.style.setProperty('--x',(Math.random()*360-180)+'px');p.style.setProperty('--y',(Math.random()*600-300)+'px');p.style.animationDuration=(1.5+Math.random()*2)+'s';document.getElementById('s8').appendChild(p);setTimeout(()=>p.remove(),3800)}}
+const music=document.getElementById('music'),file=document.getElementById('audioFile');
+document.getElementById('musicBtn').onclick=()=>{if(!music.src)file.click();else music.paused?music.play():music.pause()}
+file.onchange=e=>{let f=e.target.files[0];if(f){music.src=URL.createObjectURL(f);music.play().catch(()=>{})}}
+let sx=0;addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});addEventListener('touchend',e=>{let dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>80)go(cur+(dx<0?1:-1))},{passive:true});
+go(0);
+</script>
+</body>
+</html>
